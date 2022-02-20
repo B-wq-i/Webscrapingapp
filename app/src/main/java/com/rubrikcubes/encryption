@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class encryption{
+
+
+    static void simple_encryption(String text){
+
+        text = text.toLowerCase();
+        StringBuilder output = new StringBuilder();
+        char[] letters = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+        text = text.replace("-", "").replace(" ", "");
+        text = text.toUpperCase();
+        for (int i = 0; i < text.length(); i++) {
+            for (int a = 0; a < letters.length; a++) {
+                if (letters[a] == text.charAt(i)) {
+                    output.append((a + 1));
+                }
+            }
+        }
+        //Output is output
+    }
+
+    static void level_one_encryption(String text){
+
+        String message = text;
+
+        char[] chars = message.toCharArray();
+
+        for(char x : chars) {
+            x += 5;
+            System.out.print(x);
+        }
+    }
+
+    static void complex_encryption(String text){
+
+        String message = text;
+        List<Character> first_encrypted = new ArrayList<>();
+
+        char[] chars = message.toCharArray();
+
+        for(char x : chars) {
+            x += 5;
+            first_encrypted.add(x);
+            
+        }
+
+        StringBuilder builder = new StringBuilder();  
+
+        for (Character ch : first_encrypted) {  
+            builder.append(ch);  
+        }  
+
+        String string_first_encrypted = builder.toString();  
+        
+        //Ouput is String_first_encrypted
+
+    }
+}
